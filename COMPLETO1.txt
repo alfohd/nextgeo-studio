@@ -1,0 +1,720 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, Code, Smartphone, Zap, Check, Menu, X, ExternalLink, MessageCircle } from 'lucide-react';
+
+export default function NextGeoStudio() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [matrixColumns, setMatrixColumns] = useState<
+  { left: string; delay: string; duration: string }[]
+>([]);
+
+const [dataParticles, setDataParticles] = useState<
+  { top: string; delay: string; duration: string }[]
+>([]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  useEffect(() => {
+    const matrix = Array.from({ length: 20 }).map((_, i) => ({
+      left: `${i * 5}%`,
+      delay: `${i * 0.5}s`,
+      duration: `${8 + Math.random() * 4}s`,
+    }));
+    setMatrixColumns(matrix);
+  
+    const particles = Array.from({ length: 10 }).map(() => ({
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 2}s`,
+      duration: `${3 + Math.random() * 2}s`,
+    }));
+    setDataParticles(particles);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
+  const benefits = [
+    { icon: Code, title: 'Diseño Profesional', desc: 'Sitios web modernos que destacan tu marca' },
+    { icon: Smartphone, title: 'Responsive', desc: 'Perfectos en cualquier dispositivo' },
+    { icon: Zap, title: 'Rápidos y Optimizados', desc: 'Carga veloz y SEO optimizado' }
+  ];
+
+  const faqs = [
+    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-25 semanas dependiendo de la complejidad del proyecto.' },
+    { q: '¿Incluye hosting y dominio?', a: 'Sí, todos nuestros planes incluyen hosting y dominio por el primer año.' },
+    { q: '¿Puedo actualizar el contenido?', a: 'Absolutamente. Te enseñamos a gestionar tu sitio o lo hacemos por ti.' },
+    { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses.' },
+    { q: '¿Qué tecnologías utilizan?', a: 'Utilizamos las últimas tecnologías web: React, Next.js, y frameworks modernos para garantizar sitios rápidos y escalables.' },
+    { q: '¿El sitio será compatible con móviles?', a: 'Todos nuestros diseños son 100% responsive y se adaptan perfectamente a cualquier dispositivo.' }
+  ];
+
+  const plans = [
+    { name: 'Emprendimiento', price: '250k', features: ['Landing page', 'Hasta 3 secciones', 'Dominio por 1 año', 'Hosting por 1 año'], popular: false },
+    { name: 'Básico', price: '650k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', 'hasta 3 videos publicitarios', 'Boton de WhatsApp'], popular: false },
+    { name: 'Profesional', price: '1m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', 'Hasta 5 videos publicitarios', 'Dominio por 1 año', 'hosting por 1 año', 'Boton de WhatsApp', ], popular: true },
+    { name: 'Premium', price: '2.5m', features: ['Landing page','Logo Profesional','Hasta 16 secciones','Chat Bot','Optimizacion de redes sociales', 'Mantenimiento por 8 meses', 'Hasta 10 videos de publicitarios', 'Diseño personalizado', 'Mantenimiento por 3 meses', 'Soporte prioritario', 'SEO avanzado', 'Boton de WhatsApp', 'Boton de redes sociales'], popular: false },
+    { name: 'Crecimiento', price: '700k', features: ['Logo profesional','Hasta 8 videos publicitarios', 'Creacion y Optimizacion de redes sociales por 1 mes', 'Actualizacion visual de redes por 1 mes ' ], popular: false },
+    { name: 'ChatBot', price: '1m', features: ['ChatBot', 'Hasta 5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 mes', 'hasta 3 videos publicitarios'], popular: false },
+
+  ];
+
+  const examples = [
+    {
+      title: 'Restaurante Gourmet',
+      category: 'Gastronomía',
+      description: 'Sitio elegante con menú digital, reservas online y galería de platos',
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
+      features: ['Menú interactivo', 'Sistema de reservas', 'Galería'],
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      title: 'Boutique de Moda',
+      category: 'E-commerce',
+      description: 'Tienda online moderna con catálogo de productos y carrito de compras',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
+      features: ['Catálogo productos', 'Carrito de compras', 'Pagos online'],
+      color: 'from-pink-500 to-purple-500'
+    },
+    {
+      title: 'Estudio de Arquitectura',
+      category: 'Portafolio',
+      description: 'Portafolio minimalista con galería de proyectos y formulario de contacto',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop',
+      features: ['Portafolio visual', 'Diseño minimalista', 'Formulario contacto'],
+      color: 'from-slate-500 to-gray-500'
+    },
+    {
+      title: 'Gimnasio Fitness',
+      category: 'Servicios',
+      description: 'Sitio dinámico con horarios, clases y sistema de inscripción',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
+      features: ['Horarios de clases', 'Inscripciones', 'Blog fitness'],
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: 'Agencia de Viajes',
+      category: 'Turismo',
+      description: 'Plataforma interactiva con paquetes turísticos y sistema de cotización',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop',
+      features: ['Paquetes turísticos', 'Cotizaciones', 'Testimonios'],
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: 'Clínica Dental',
+      category: 'Salud',
+      description: 'Sitio profesional con información de servicios y agenda de citas',
+      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop',
+      features: ['Servicios médicos', 'Agenda citas', 'Información equipo'],
+      color: 'from-teal-500 to-blue-500'
+    }
+  ];
+
+  const openWhatsApp = () => {
+    const phone = '573154473200'; // Cambia por tu número
+    const message = encodeURIComponent('¡Hola! Me interesa crear una página web con NextGeo Studio');
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  };
+
+  return (
+    <div className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white min-h-screen">
+      <style>{`
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes drawLineX { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+        @keyframes pulseGlow { 0%, 100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.9)) drop-shadow(0 0 16px rgba(59,130,246,0.7)); } 50% { filter: drop-shadow(0 0 12px rgba(255,255,255,1)) drop-shadow(0 0 32px rgba(59,130,246,1)); } }
+        @keyframes matrix { 0% { transform: translateY(-100%); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+        @keyframes circuitPulse { 0%, 100% { stroke-dashoffset: 1000; } 50% { stroke-dashoffset: 0; } }
+        @keyframes dataFlow { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes logoFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        @keyframes textShimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+        @keyframes slideInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes scaleIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes whatsappPulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } }
+        
+        .tech-line { transform-origin: center; animation: drawLineX 1.4s ease-out forwards, pulseGlow 2.8s ease-in-out infinite; }
+        .tech-node { animation: pulseGlow 2.4s ease-in-out infinite; }
+        .matrix-text { animation: matrix 8s linear infinite; }
+        .circuit-line { stroke-dasharray: 1000; animation: circuitPulse 4s ease-in-out infinite; }
+        .data-particle { animation: dataFlow 3s linear infinite; }
+        .logo-float { animation: logoFloat 4s ease-in-out infinite; }
+        .text-shimmer { background: linear-gradient(90deg, rgba(59, 130, 246, 0.8) 0%, rgba(147, 197, 253, 1) 50%, rgba(59, 130, 246, 0.8) 100%); background-size: 2000px 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: textShimmer 3s linear infinite; }
+        .slide-in-up { animation: slideInUp 0.6s ease-out forwards; }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        .scale-in { animation: scaleIn 0.5s ease-out forwards; }
+        .whatsapp-pulse { animation: whatsappPulse 2s infinite; }
+        .glassmorphism { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+      `}</style>
+
+      {/* WhatsApp Floating Button */}
+      <button
+        onClick={openWhatsApp}
+        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-green-500 to-green-600 p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 whatsapp-pulse group"
+        aria-label="Contactar por WhatsApp"
+      >
+        <MessageCircle className="text-white" size={28} />
+        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
+          ¡Chatea con nosotros!
+        </span>
+      </button>
+
+      {/* Navigation */}
+      <nav className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'glassmorphism shadow-2xl' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">N</div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                NextGeo
+              </div>
+            </div>
+            
+            <div className="hidden md:flex space-x-8">
+              {['Inicio', 'Beneficios', 'Tecnologías', 'Ejemplos', 'FAQ', 'Planes'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
+                  className="relative hover:text-blue-400 transition-colors group"
+                >
+                  {item}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                </button>
+              ))}
+            </div>
+
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 hover:bg-white/10 rounded-lg transition">
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden glassmorphism border-t border-white/10">
+            <div className="px-4 pt-2 pb-4 space-y-2">
+              {['Inicio', 'Beneficios', 'Tecnologías', 'Ejemplos', 'FAQ', 'Planes'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}
+                  className="block w-full text-left py-3 px-4 hover:bg-white/10 rounded-lg transition"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section - Modernizado */}
+      <section id="inicio" className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 opacity-20">
+            {matrixColumns.map((col, i) => (
+              <div key={i} className="matrix-text absolute text-blue-400 font-mono text-xs" style={{ left: col.left, animationDelay: col.delay, animationDuration: col.duration }}>
+                {Array(20).fill('01').join(' ')}
+              </div>
+            ))}
+          </div>
+
+          <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="circuit" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+                <circle cx="50" cy="50" r="2" fill="#3b82f6" />
+                <circle cx="150" cy="50" r="2" fill="#3b82f6" />
+                <circle cx="50" cy="150" r="2" fill="#3b82f6" />
+                <circle cx="150" cy="150" r="2" fill="#3b82f6" />
+                <line x1="50" y1="50" x2="150" y2="50" stroke="#3b82f6" strokeWidth="1" className="circuit-line" />
+                <line x1="50" y1="50" x2="50" y2="150" stroke="#3b82f6" strokeWidth="1" className="circuit-line" />
+                <line x1="150" y1="50" x2="150" y2="150" stroke="#3b82f6" strokeWidth="1" className="circuit-line" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#circuit)" />
+          </svg>
+
+          <div className="absolute w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"></div>
+          <div className="absolute w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl top-1/3 right-1/4 animate-pulse" style={{animationDelay: '1s'}}></div>
+          
+          <div className="absolute top-20 left-10 w-20 h-20 border-2 border-blue-500/30 rotate-45 animate-pulse"></div>
+          <div className="absolute bottom-32 right-20 w-16 h-16 border-2 border-cyan-500/30 animate-spin" style={{animationDuration: '8s'}}></div>
+          
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        </div>
+
+        <div className="relative z-10 text-center space-y-8 slide-in-up">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="logo-float">
+              <div className="text-7xl sm:text-9xl font-bold">
+                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  NextGeo
+                </span>
+              </div>
+            </div>
+            
+            <div className="relative w-72 sm:w-96 h-4 my-6 flex items-center justify-center">
+              <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent tech-line" />
+              <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent blur-md opacity-90 tech-line" />
+              <span className="absolute left-0 w-3 h-3 bg-white rounded-full tech-node" />
+              <span className="absolute right-0 w-3 h-3 bg-white rounded-full tech-node" />
+            </div>
+            
+            <div className="space-y-2">
+              <h2 className="text-3xl sm:text-4xl font-light tracking-[0.3em] text-gray-300">STUDIO</h2>
+            </div>
+          </div>
+
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-2xl mx-auto px-4 leading-relaxed">
+            Transformamos tus ideas en <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-semibold">experiencias digitales</span> extraordinarias
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button 
+              onClick={() => scrollToSection('beneficios')}
+              className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 relative overflow-hidden"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Conocer más
+                <ChevronDown className="animate-bounce" size={20} />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </button>
+            
+            <button
+              onClick={openWhatsApp}
+              className="group glassmorphism px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white/10 hover:scale-105 flex items-center gap-2"
+            >
+              <MessageCircle size={20} className="text-green-400" />
+              Contactar ahora
+            </button>
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <ChevronDown className="animate-bounce text-blue-400" size={32} />
+        </div>
+      </section>
+
+      {/* Benefits Section - Mejorado */}
+      <section id="beneficios" className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16 fade-in">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                ¿Por qué necesitas una página web?
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              En el mundo digital actual, tu presencia online es tu carta de presentación
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {benefits.map((benefit, idx) => (
+              <div key={idx} className="group glassmorphism p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 relative overflow-hidden scale-in" style={{animationDelay: `${idx * 0.1}s`}}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <benefit.icon className="text-blue-400 mb-4 group-hover:scale-110 transition-transform relative z-10" size={48} />
+                <h3 className="text-2xl font-bold mb-3 relative z-10">{benefit.title}</h3>
+                <p className="text-gray-400 relative z-10 leading-relaxed">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 glassmorphism p-8 rounded-2xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
+            <h3 className="text-2xl font-bold mb-4 relative z-10 text-blue-400">Tu presencia digital importa</h3>
+            <p className="text-gray-300 leading-relaxed relative z-10">
+              Más del <span className="text-blue-400 font-semibold">80%</span> de los consumidores investigan online antes de comprar. Una página web profesional genera confianza, 
+              aumenta tu credibilidad y te abre las puertas a nuevos clientes <span className="text-purple-400 font-semibold">24/7</span>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section - Modernizado */}
+      <section id="tecnologias" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Tecnologías de Vanguardia
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Utilizamos las herramientas más modernas del mercado
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {[
+  { name: 'React & Next.js', desc: 'Framework moderno para aplicaciones ultrarrápidas', color: 'from-cyan-500 to-blue-500' },
+  { name: 'Tailwind CSS', desc: 'Diseño responsive y personalizable', color: 'from-blue-500 to-purple-500' },
+  { name: 'TypeScript', desc: 'Código robusto y escalable', color: 'from-blue-600 to-indigo-600' },
+  { name: 'SEO Optimizado', desc: 'Mejores posiciones en Google', color: 'from-green-500 to-emerald-500' },
+  { name: 'API Integration', desc: 'Conexión con servicios externos', color: 'from-purple-500 to-pink-500' },
+  { name: 'Progressive Web Apps', desc: 'Experiencia similar a apps nativas', color: 'from-orange-500 to-red-500' }
+].map((tech, idx) => (
+  <div
+    key={idx}
+    className="group relative glassmorphism p-6 rounded-2xl transition-all duration-300 hover:scale-[1.04] hover:shadow-2xl hover:shadow-blue-500/20 overflow-hidden"
+  >
+    {/* Glow background */}
+    <div
+      className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-15 transition-opacity duration-300`}
+    />
+
+    {/* Decorative tech lines */}
+    <div className="absolute top-4 right-4 w-10 h-10 border border-white/10 rounded-full group-hover:scale-125 transition-transform" />
+    <div className="absolute bottom-4 left-4 w-6 h-6 border border-white/10 rotate-45 group-hover:rotate-90 transition-transform" />
+
+    {/* Fake icon (modern tech dot) */}
+    <div className="relative z-10 mb-5">
+      <div
+        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center shadow-lg`}
+      >
+        <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
+      </div>
+    </div>
+
+    <h3 className="relative z-10 text-lg font-semibold mb-2 tracking-wide text-white group-hover:text-blue-400 transition-colors">
+      {tech.name}
+    </h3>
+
+    <p className="relative z-10 text-gray-400 text-sm leading-relaxed">
+      {tech.desc}
+    </p>
+  </div>
+))}
+
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { value: '100%', label: 'Responsive Design', color: 'from-blue-400 to-cyan-400' },
+              { value: '99.9%', label: 'Uptime Garantizado', color: 'from-green-400 to-emerald-400' },
+              { value: '<2s', label: 'Tiempo de Carga', color: 'from-purple-400 to-pink-400' },
+              { value: 'A+', label: 'Score SEO', color: 'from-orange-400 to-red-400' }
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center glassmorphism p-6 rounded-xl hover:bg-white/10 transition-all">
+                <div className={`text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                  {stat.value}
+                </div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Examples Section - Mejorado */}
+      <section id="ejemplos" className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute top-10 right-10 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                Nuestro Trabajo
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Explora proyectos que hemos desarrollado para diferentes negocios
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {examples.map((example, idx) => (
+              <div 
+                key={idx} 
+                className="group glassmorphism rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${example.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                  <img 
+                    src={example.image} 
+                    alt={example.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 right-4 glassmorphism px-3 py-1 rounded-full text-sm font-medium">
+                    {example.category}
+                  </div>
+                  
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  </div>
+                </div>
+
+                <div className="p-6 relative">
+                  <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">
+                    {example.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4 leading-relaxed">
+                    {example.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {example.features.map((feature, i) => (
+                      <span
+                        key={i}
+                        className="text-xs glassmorphism px-3 py-1 rounded-full text-blue-400 hover:bg-white/10 transition-colors"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button className="flex items-center text-blue-400 hover:text-blue-300 transition-colors group/btn">
+                    Ver demo
+                    <ExternalLink className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={16} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <p className="text-gray-400 mb-4 text-lg">¿Te gusta lo que ves?</p>
+            <button
+              onClick={() => scrollToSection('planes')}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Ver planes</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Modernizado */}
+      <section id="faq" className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.08),transparent_60%)]" />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Preguntas Frecuentes
+              </span>
+            </h2>
+            <p className="text-gray-400 text-lg">Todo lo que necesitas saber</p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <details
+                key={idx}
+                className="group glassmorphism rounded-xl hover:bg-white/10 transition-all overflow-hidden"
+              >
+                <summary className="cursor-pointer p-6 font-semibold text-lg list-none flex justify-between items-center">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="group-open:rotate-180 transition-transform text-blue-400" size={24} />
+                </summary>
+                <div className="px-6 pb-6 text-gray-400 border-t border-white/10 pt-4 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center glassmorphism p-8 rounded-2xl">
+            <h3 className="text-xl font-bold mb-3 text-blue-400">¿Tienes más preguntas?</h3>
+            <p className="text-gray-400 mb-4">Estamos aquí para ayudarte</p>
+            <button
+              onClick={openWhatsApp}
+              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center gap-2"
+            >
+              <MessageCircle size={20} />
+              Contáctanos por WhatsApp
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section - Modernizado */}
+      <section id="planes" className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(59,130,246,0.05),transparent)]" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Planes a tu medida
+              </span>
+            </h2>
+            <p className="text-gray-400 text-lg">Elige el plan perfecto para tu proyecto</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {plans.map((plan, idx) => (
+              <div
+                key={idx}
+                className={`relative glassmorphism rounded-2xl p-8 transition-all duration-300 hover:scale-105 ${
+                  plan.popular ? 'ring-2 ring-blue-500 shadow-2xl shadow-blue-500/20' : 'hover:bg-white/10'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    Más Popular
+                  </div>
+                )}
+
+                <h3 className="text-2xl font-bold mb-2 text-center">{plan.name}</h3>
+                <div className="text-center mb-6">
+                  <span className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    ${plan.price}
+                  </span>
+                  <span className="text-gray-400"> COP</span>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start">
+                      <Check className="text-blue-400 mr-2 mt-1 flex-shrink-0" size={20} />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  onClick={() => setSelectedPlan(plan.name)}
+                  className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 shadow-lg hover:shadow-blue-500/50'
+                      : 'glassmorphism hover:bg-white/20'
+                  }`}
+                >
+                  Comenzar
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center glassmorphism p-8 rounded-2xl">
+            <p className="text-gray-300 text-lg mb-4">
+              ¿Necesitas algo diferente? Creamos <span className="text-blue-400 font-semibold">planes personalizados</span> para tu negocio
+            </p>
+            <button
+              onClick={openWhatsApp}
+              className="glassmorphism hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+            >
+              Solicitar cotización personalizada
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer - Modernizado */}
+      <footer className="bg-slate-950/80 backdrop-blur-sm py-12 px-4 border-t border-white/10 relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center font-bold text-xl">N</div>
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">NextGeo</span>
+              </div>
+              <p className="text-gray-400 text-sm">Transformamos ideas en experiencias digitales extraordinarias</p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4 text-blue-400">Enlaces</h4>
+              <ul className="space-y-2">
+                {['Inicio', 'Beneficios', 'Tecnologías', 'Ejemplos'].map((item) => (
+                  <li key={item}>
+                    <button onClick={() => scrollToSection(item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))} className="text-gray-400 hover:text-white transition text-sm">
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4 text-blue-400">Servicios</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li>Diseño Web</li>
+                <li>E-commerce</li>
+                <li>SEO & Marketing</li>
+                <li>Mantenimiento</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4 text-blue-400">Contacto</h4>
+              <button
+                onClick={openWhatsApp}
+                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 text-sm inline-flex items-center gap-2"
+              >
+                <MessageCircle size={16} />
+                WhatsApp
+              </button>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/10 pt-8 text-center">
+            <p className="text-gray-400 text-sm">© 2024 NextGeo Studio. Todos los derechos reservados</p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Selected Plan Modal - Modernizado */}
+      {selectedPlan && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedPlan(null)}
+        >
+          <div
+            className="glassmorphism rounded-2xl p-8 max-w-md w-full ring-2 ring-blue-500/50 scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Check size={32} />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">
+                Plan <span className="text-blue-400">{selectedPlan}</span>
+              </h3>
+              <p className="text-gray-400">
+                ¡Excelente elección! Nos pondremos en contacto pronto
+              </p>
+            </div>
+            
+            <div className="space-y-3">
+              <button
+                onClick={openWhatsApp}
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-3 rounded-xl font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2"
+              >
+                <MessageCircle size={20} />
+                Contactar por WhatsApp
+              </button>
+              
+              <button
+                onClick={() => setSelectedPlan(null)}
+                className="w-full glassmorphism hover:bg-white/10 py-3 rounded-xl font-semibold transition-all"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

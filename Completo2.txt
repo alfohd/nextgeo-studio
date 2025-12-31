@@ -47,7 +47,7 @@ export default function NextGeoStudio() {
     { name: 'Profesional', price: '1m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '5 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp'], popular: true, color: 'from-purple-500 to-pink-500' },
     { name: 'Premium', price: '2.5m', features: ['Landing page','Logo Profesional','Hasta 16 secciones','Chat Bot','Optimizacion RRSS', 'Mantenimiento 8 meses', '10 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
     { name: 'Crecimiento', price: '700k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RRSS 1 mes', 'Actualizacion visual RRSS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
-    { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 meses', ], popular: false, color: 'from-indigo-400 to-blue-500' },
+    { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 mes', 'Integración web'], popular: false, color: 'from-indigo-400 to-blue-500' },
   ];
 
   const examples = [
