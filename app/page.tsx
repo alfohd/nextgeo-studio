@@ -36,7 +36,7 @@ export default function NextGeoStudio() {
     { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-25 semanas dependiendo de la complejidad del proyecto.' },
     { q: '¿Incluye hosting y dominio?', a: 'Sí, todos nuestros planes incluyen hosting y dominio por el primer año.' },
     { q: '¿Puedo actualizar el contenido?', a: 'Absolutamente. Te enseñamos a gestionar tu sitio o lo hacemos por ti.' },
-    { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses.' },
+    { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses en algunos planes.' },
     { q: '¿Qué tecnologías utilizan?', a: 'Utilizamos las últimas tecnologías web: React, Next.js, y frameworks modernos.' },
     { q: '¿El sitio será compatible con móviles?', a: 'Todos nuestros diseños son 100% responsive y se adaptan perfectamente.' }
   ];
