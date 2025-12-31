@@ -146,7 +146,9 @@ export default function NextGeoStudio() {
         <div className="relative z-10 text-center max-w-4xl px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm mb-6 animate-in fade-in slide-in-from-bottom-4">
             <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-            Innovación Digital 2024
+            Innovación Digital 2026
+          
+      
           </div>
           
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40 animate-in slide-in-from-bottom-8 duration-700">
