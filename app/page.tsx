@@ -49,7 +49,7 @@ const [dataParticles, setDataParticles] = useState<
   ];
 
   const faqs = [
-    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-2 semanas dependiendo de la complejidad del proyecto.' },
+    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-25 semanas dependiendo de la complejidad del proyecto.' },
     { q: '¿Incluye hosting y dominio?', a: 'Sí, todos nuestros planes incluyen hosting y dominio por el primer año.' },
     { q: '¿Puedo actualizar el contenido?', a: 'Absolutamente. Te enseñamos a gestionar tu sitio o lo hacemos por ti.' },
     { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses.' },
