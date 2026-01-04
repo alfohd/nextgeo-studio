@@ -33,21 +33,21 @@ export default function NextGeoStudio() {
   ];
 
   const faqs = [
-    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-25 semanas dependiendo de la complejidad del proyecto.' },
+    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-2 semanas dependiendo de la complejidad del proyecto.' },
     { q: '¿Incluye hosting y dominio?', a: 'Sí, todos nuestros planes incluyen hosting y dominio por el primer año.' },
     { q: '¿Puedo actualizar el contenido?', a: 'Absolutamente. Te enseñamos a gestionar tu sitio o lo hacemos por ti.' },
-    { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses.' },
+    { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses en algunos planes.' },
     { q: '¿Qué tecnologías utilizan?', a: 'Utilizamos las últimas tecnologías web: React, Next.js, y frameworks modernos.' },
     { q: '¿El sitio será compatible con móviles?', a: 'Todos nuestros diseños son 100% responsive y se adaptan perfectamente.' }
   ];
 
   const plans = [
-    { name: 'Emprendimiento', price: '250k', features: ['Landing page', 'Hasta 3 secciones', 'Dominio por 1 año', 'Hosting por 1 año'], popular: false, color: 'from-blue-400 to-cyan-400' },
-    { name: 'Básico', price: '650k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', '3 videos publicitarios', 'Boton de WhatsApp'], popular: false, color: 'from-cyan-400 to-teal-400' },
-    { name: 'Profesional', price: '1m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '5 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp'], popular: true, color: 'from-purple-500 to-pink-500' },
-    { name: 'Premium', price: '2.5m', features: ['Landing page','Logo Profesional','Hasta 16 secciones','Chat Bot','Optimizacion RRSS', 'Mantenimiento 8 meses', '10 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
-    { name: 'Crecimiento', price: '700k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RRSS 1 mes', 'Actualizacion visual RRSS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
-    { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 mes', 'Integración web'], popular: false, color: 'from-indigo-400 to-blue-500' },
+    { name: 'Emprendimiento', price: '250k', features: ['Landing page', '2 secciones', 'No incluye dominio personalizado'], popular: false, color: 'from-blue-400 to-cyan-400' },
+    { name: 'Básico', price: '900k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', '2 videos publicitarios', 'Boton de WhatsApp'], popular: false, color: 'from-cyan-400 to-teal-400' },
+    { name: 'Profesional', price: '1.2m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '4 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp y redes sociales'], popular: true, color: 'from-purple-500 to-pink-500' },
+    { name: 'Premium', price: '2.8m', features: ['Landing page','Logo Profesional','Secciones ilimitadas','Chat Bot','Optimizacion RRSS', 'Mantenimiento 5 meses', '6 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
+    { name: 'Crecimiento', price: '850k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RRSS 1 mes', 'Actualizacion visual RRSS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
+    { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 meses', ], popular: false, color: 'from-indigo-400 to-blue-500' },
   ];
 
   const examples = [
@@ -146,7 +146,9 @@ export default function NextGeoStudio() {
         <div className="relative z-10 text-center max-w-4xl px-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm mb-6 animate-in fade-in slide-in-from-bottom-4">
             <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-            Innovación Digital 2024
+            Innovación Digital 2026
+          
+      
           </div>
           
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40 animate-in slide-in-from-bottom-8 duration-700">

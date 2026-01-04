@@ -33,7 +33,7 @@ export default function NextGeoStudio() {
   ];
 
   const faqs = [
-    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-25 semanas dependiendo de la complejidad del proyecto.' },
+    { q: '¿Cuánto tiempo toma crear mi sitio?', a: 'Entre 1-2 semanas dependiendo de la complejidad del proyecto.' },
     { q: '¿Incluye hosting y dominio?', a: 'Sí, todos nuestros planes incluyen hosting y dominio por el primer año.' },
     { q: '¿Puedo actualizar el contenido?', a: 'Absolutamente. Te enseñamos a gestionar tu sitio o lo hacemos por ti.' },
     { q: '¿Ofrecen soporte post-lanzamiento?', a: 'Sí, incluimos soporte técnico durante los primeros 3 meses en algunos planes.' },
@@ -42,21 +42,22 @@ export default function NextGeoStudio() {
   ];
 
   const plans = [
-    { name: 'Emprendimiento', price: '250k', features: ['Landing page', 'Hasta 3 secciones', 'Dominio por 1 año', 'Hosting por 1 año'], popular: false, color: 'from-blue-400 to-cyan-400' },
-    { name: 'Básico', price: '650k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', '3 videos publicitarios', 'Boton de WhatsApp'], popular: false, color: 'from-cyan-400 to-teal-400' },
-    { name: 'Profesional', price: '1m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '5 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp'], popular: true, color: 'from-purple-500 to-pink-500' },
-    { name: 'Premium', price: '2.5m', features: ['Landing page','Logo Profesional','Hasta 16 secciones','Chat Bot','Optimizacion RRSS', 'Mantenimiento 8 meses', '10 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
-    { name: 'Crecimiento', price: '700k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RRSS 1 mes', 'Actualizacion visual RRSS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
+    { name: 'Emprendimiento', price: '250k', features: ['Landing page', '2 secciones', 'No incluye dominio personalizado'], popular: false, color: 'from-blue-400 to-cyan-400' },
+    { name: 'Básico', price: '900k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', '2 videos publicitarios', 'Boton de WhatsApp'], popular: false, color: 'from-cyan-400 to-teal-400' },
+    { name: 'Profesional', price: '1.2m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '4 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp y redes sociales'], popular: true, color: 'from-purple-500 to-pink-500' },
+    { name: 'Premium', price: '2.8m', features: ['Landing page','Logo Profesional','Secciones ilimitadas','Chat Bot','Optimizacion RRSS', 'Mantenimiento 5 meses', '6 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
+    { name: 'Crecimiento', price: '850k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RRSS 1 mes', 'Actualizacion visual RRSS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
     { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 meses', ], popular: false, color: 'from-indigo-400 to-blue-500' },
   ];
 
+  // LINKS ACTUALIZADOS AQUÍ
   const examples = [
-    { title: 'Restaurante Gourmet', category: 'Gastronomía', description: 'Sitio elegante con menú digital y reservas.', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop', color: 'from-orange-500 to-red-500' },
-    { title: 'Boutique de Moda', category: 'E-commerce', description: 'Tienda online moderna con carrito.', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop', color: 'from-pink-500 to-purple-500' },
-    { title: 'Estudio Arquitectura', category: 'Portafolio', description: 'Diseño minimalista visual.', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop', color: 'from-slate-500 to-gray-500' },
-    { title: 'Gimnasio Fitness', category: 'Servicios', description: 'Horarios y sistema de inscripción.', image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop', color: 'from-green-500 to-emerald-500' },
-    { title: 'Agencia de Viajes', category: 'Turismo', description: 'Paquetes turísticos y cotización.', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop', color: 'from-blue-500 to-cyan-500' },
-    { title: 'Clínica Dental', category: 'Salud', description: 'Servicios médicos y agenda.', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop', color: 'from-teal-500 to-blue-500' }
+    { title: 'Restaurante Gourmet', category: 'Gastronomía', description: 'Sitio elegante con menú digital y reservas.', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop', color: 'from-orange-500 to-red-500', link: 'https://demo-restaurante-five.vercel.app' },
+    { title: 'Boutique de Moda', category: 'E-commerce', description: 'Tienda online moderna con carrito.', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop', color: 'from-pink-500 to-purple-500', link: 'https://demo-boutique.vercel.app' },
+    { title: 'Estudio Arquitectura', category: 'Portafolio', description: 'Diseño minimalista visual.', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop', color: 'from-slate-500 to-gray-500', link: 'https://demo-arquitectura.vercel.app' },
+    { title: 'Gimnasio Fitness', category: 'Servicios', description: 'Horarios y sistema de inscripción.', image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop', color: 'from-green-500 to-emerald-500', link: 'https://demo-gimnasio.vercel.app' },
+    { title: 'Agencia de Viajes', category: 'Turismo', description: 'Paquetes turísticos y cotización.', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop', color: 'from-blue-500 to-cyan-500', link: 'https://demo-viajes.vercel.app' },
+    { title: 'Clínica Dental', category: 'Salud', description: 'Servicios médicos y agenda.', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop', color: 'from-teal-500 to-blue-500', link: 'https://demo-clinica-pi.vercel.app' }
   ];
 
   return (
@@ -147,8 +148,6 @@ export default function NextGeoStudio() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm mb-6 animate-in fade-in slide-in-from-bottom-4">
             <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
             Innovación Digital 2026
-          
-      
           </div>
           
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40 animate-in slide-in-from-bottom-8 duration-700">
@@ -260,13 +259,19 @@ export default function NextGeoStudio() {
         </div>
       </section>
 
-      {/* Portafolio */}
+      {/* Portafolio - LINKS CONECTADOS AQUÍ */}
       <section id="ejemplos" className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Resultados Reales</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {examples.map((ex, i) => (
-              <div key={i} className="group relative rounded-2xl overflow-hidden cursor-pointer">
+              <a 
+                key={i} 
+                href={ex.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative rounded-2xl overflow-hidden cursor-pointer block"
+              >
                 <div className={`absolute inset-0 bg-gradient-to-t ${ex.color} opacity-0 group-hover:opacity-40 transition-opacity duration-500 z-10`} />
                 <img 
                   src={ex.image} 
@@ -277,10 +282,13 @@ export default function NextGeoStudio() {
                    <span className="text-xs font-bold px-2 py-1 bg-white/20 backdrop-blur-md rounded-md border border-white/10 mb-2 inline-block">
                      {ex.category}
                    </span>
-                   <h3 className="text-2xl font-bold text-white mb-1">{ex.title}</h3>
+                   <div className="flex items-center gap-2">
+                    <h3 className="text-2xl font-bold text-white mb-1">{ex.title}</h3>
+                    <ExternalLink size={18} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                   </div>
                    <p className="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100">{ex.description}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -307,7 +315,6 @@ export default function NextGeoStudio() {
                 )}
                 
                 <div className="bg-[#0b0f19] h-full rounded-[22px] p-8 flex flex-col relative overflow-hidden">
-                  {/* Gradient Glow inside card */}
                   <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${plan.color} opacity-10 blur-3xl rounded-full -mr-32 -mt-32 pointer-events-none`} />
 
                   <h3 className="text-xl font-bold text-gray-300 mb-2">{plan.name}</h3>
