@@ -79,7 +79,9 @@ export default function NextGeoStudio() {
     { title: 'Estudio Arquitectura', category: 'Portafolio', description: 'Diseño minimalista visual.', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop', color: 'from-slate-500 to-gray-500', link: 'https://demo-arquitectura.vercel.app' },
     { title: 'Gimnasio Fitness', category: 'Servicios', description: 'Horarios y sistema de inscripción.', image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop', color: 'from-green-500 to-emerald-500', link: 'https://demo-gimnasio.vercel.app' },
     { title: 'Agencia de Viajes', category: 'Turismo', description: 'Paquetes turísticos y cotización.', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop', color: 'from-blue-500 to-cyan-500', link: 'https://demo-viajes.vercel.app' },
-    { title: 'Clínica Dental', category: 'Salud', description: 'Servicios médicos y agenda.', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop', color: 'from-teal-500 to-blue-500', link: 'https://demo-clinica-pi.vercel.app' }
+    { title: 'Clínica Dental', category: 'Salud', description: 'Servicios médicos y agenda.', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop', color: 'from-teal-500 to-blue-500', link: 'https://demo-clinica-pi.vercel.app' },
+    { title: 'Tienda iPhone', category: 'E-commerce', description: 'Venta de iPhones con catálogo, carrito y diseño premium.', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=600&fit=crop', color: 'from-gray-500 to-neutral-800', link: 'https://tienda-tecnologia-eight.vercel.app' }
+
   ];
 
   return (
