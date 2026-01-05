@@ -45,9 +45,31 @@ export default function NextGeoStudio() {
     { name: 'Emprendimiento', price: '250k', features: ['Landing page', '2 secciones', 'No incluye dominio personalizado'], popular: false, color: 'from-blue-400 to-cyan-400' },
     { name: 'Básico', price: '900k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', '2 videos publicitarios', 'Boton de WhatsApp'], popular: false, color: 'from-cyan-400 to-teal-400' },
     { name: 'Profesional', price: '1.2m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '4 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp y redes sociales'], popular: true, color: 'from-purple-500 to-pink-500' },
-    { name: 'Premium', price: '2.8m', features: ['Landing page','Logo Profesional','Secciones ilimitadas','Chat Bot','Optimizacion RRSS', 'Mantenimiento 5 meses', '6 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
-    { name: 'Crecimiento', price: '850k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RRSS 1 mes', 'Actualizacion visual RRSS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
+    { name: 'Premium', price: '2.8m', features: ['Landing page','Logo Profesional','Secciones ilimitadas','Chat Bot','Optimizacion RS', 'Mantenimiento 5 meses', '6 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
+    { name: 'Crecimiento', price: '850k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RS 1 mes', 'Actualizacion visual RS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
     { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 meses', ], popular: false, color: 'from-indigo-400 to-blue-500' },
+    {
+      name: 'Sistema Avanzado',
+      price: 'Desde $3.500.000 COP',
+      features: [
+        'Sistema web completo (NO landing page)',
+        'Backend + Frontend (Full Stack)',
+        'Base de datos profesional',
+        'Sistema de reservas o pedidos',
+        'Gestión de usuarios (login y roles)',
+        'Panel administrativo',
+        'Integración de pagos (Stripe / Wompi / PayPal)',
+        'Estados y validaciones (reservas, pagos, usuarios)',
+        'Notificaciones básicas (correo o WhatsApp)',
+        'Diseño UI/UX premium y responsive',
+        'Optimización de rendimiento y seguridad',
+        'Deploy profesional (Vercel / servidor)',
+        'Capacitación básica para el cliente',
+        'Mantenimiento y soporte por 4 meses'
+      ],
+      color: 'from-purple-500 to-indigo-600'
+    }
+    
   ];
 
   // LINKS ACTUALIZADOS AQUÍ
