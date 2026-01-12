@@ -42,47 +42,258 @@ export default function NextGeoStudio() {
   ];
 
   const plans = [
-    { name: 'Emprendimiento', price: '250k', features: ['Landing page', '2 secciones', 'No incluye dominio personalizado'], popular: false, color: 'from-blue-400 to-cyan-400' },
-    { name: 'Básico', price: '900k', features: ['Landing page', 'Hasta 5 secciones', 'Logo Basico', 'Mantenimiento por 1 mes', 'Dominio por 1 año', 'Hosting por 1 año', '2 videos publicitarios', 'Boton de WhatsApp'], popular: false, color: 'from-cyan-400 to-teal-400' },
-    { name: 'Profesional', price: '1.2m', features: ['Landing Page','Logo Avanzado', 'Hasta 8 secciones', 'Mantenimiento por 3 meses', 'SEO avanzado', '4 videos publicitarios', 'Dominio + Hosting 1 año', 'Boton de WhatsApp y redes sociales'], popular: true, color: 'from-purple-500 to-pink-500' },
-    { name: 'Premium', price: '2.8m', features: ['Landing page','Logo Profesional','Secciones ilimitadas','Chat Bot','Optimizacion RS', 'Mantenimiento 5 meses', '6 videos publicitarios', 'Diseño personalizado', 'Soporte prioritario', 'SEO avanzado', 'Botones sociales'], popular: false, color: 'from-amber-400 to-orange-500' },
-    { name: 'Crecimiento', price: '850k', features: ['Logo profesional','8 videos publicitarios', 'Creacion y Optimizacion RS 1 mes', 'Actualizacion visual RS 1 mes ' ], popular: false, color: 'from-emerald-400 to-green-500' },
-    { name: 'ChatBot', price: '1m', features: ['ChatBot IA', '5 videos publicitarios', 'Logo Avanzado', 'Mantenimiento por 3 meses', ], popular: false, color: 'from-indigo-400 to-blue-500' },
+    // =========================
+    // 🟦 PLANES LANDING PAGE
+    // =========================
     {
-      name: 'Sistema Avanzado',
-      price: 'Desde $3.500.000 COP',
-      features: [
-        'Sistema web completo (NO landing page)',
-        'Backend + Frontend (Full Stack)',
-        'Base de datos profesional',
-        'Sistema de reservas o pedidos',
-        'Gestión de usuarios (login y roles)',
-        'Panel administrativo',
-        'Integración de pagos (Stripe / Wompi / PayPal)',
-        'Estados y validaciones (reservas, pagos, usuarios)',
-        'Notificaciones básicas (correo o WhatsApp)',
-        'Diseño UI/UX premium y responsive',
-        'Optimización de rendimiento y seguridad',
-        'Deploy profesional (Vercel / servidor)',
-        'Capacitación básica para el cliente',
-        'Mantenimiento y soporte por 4 meses'
-      ],
-      color: 'from-purple-500 to-indigo-600'
+      category: 'Planes Landing Page',
+      description: 'Ideales para emprendedores y negocios que necesitan presencia digital profesional.',
+      items: [
+        {
+          name: 'Emprendimiento',
+          price: '250k',
+          features: [
+            'Landing page',
+            '2 secciones',
+            'No incluye dominio personalizado'
+          ],
+          popular: false,
+          color: 'from-blue-400 to-cyan-400'
+        },
+        {
+          name: 'Básico',
+          price: '900k',
+          features: [
+            'Landing page',
+            'Hasta 5 secciones',
+            'Logo Básico',
+            'Mantenimiento por 1 mes',
+            'Dominio por 1 año',
+            'Hosting por 1 año',
+            '1 video publicitario',
+            'Botón de WhatsApp'
+          ],
+          popular: false,
+          color: 'from-cyan-400 to-teal-400'
+        },
+        {
+          name: 'Profesional',
+          price: '1.5m',
+          features: [
+            'Landing page',
+            'Logo adaptado a la identidad de tu negocio',
+            'Hasta 8 secciones',
+            'Mantenimiento por 3 meses',
+            'SEO avanzado',
+            '2 videos publicitarios',
+            'Dominio + Hosting por 1 año',
+            'Botón de WhatsApp y redes sociales'
+          ],
+          popular: true,
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'Premium',
+          price: '2.8m',
+          features: [
+            'Landing page',
+            'Logo adaptado a la identidad de tu negocio',
+            'Secciones ilimitadas',
+            'ChatBot Basico por 1 mes',
+            'Optimización de redes sociales',
+            'Mantenimiento por 5 meses',
+            '4 videos publicitarios',
+            'Diseño personalizado',
+            'Soporte prioritario',
+            'SEO avanzado',
+            'Botones sociales'
+          ],
+          popular: false,
+          color: 'from-amber-400 to-orange-500'
+        }
+      ]
+    },
+  
+    // =========================
+    // 🟣 PLANES CHATBOT
+    // =========================
+    {
+      category: 'Planes ChatBot',
+      description: 'Automatiza la atención al cliente con respuestas controladas y aprobadas por Meta.',
+      items: [
+        {
+          name: 'ChatBot Básico',
+          price: '700k',
+          features: [
+            'Chatbot automatizado por palabras clave',
+            'Configuración inicial del bot',
+            'Hasta 10 palabras clave personalizadas',
+            'Respuestas automáticas oficiales del negocio',
+            'Mensaje de bienvenida personalizado',
+            'Flujo básico de conversación',
+            'Integración en WhatsApp',
+            'Personalización con identidad del negocio',
+            'Mantenimiento y soporte por 1 mes'
+          ],
+          popular: false,
+          color: 'from-indigo-400 to-blue-500'
+        },
+        {
+          name: 'ChatBot Avanzado',
+          price: '900k',
+          features: [
+            'Chatbot automatizado por palabras clave',
+            'Diseño de flujos conversacionales personalizados',
+            'Imagen por palabra clave',
+            'Hasta 25 palabras clave personalizadas',
+            'Respuestas automáticas según intención',
+            'Menú interactivo de opciones',
+            'Personalización con identidad del negocio',
+            'Integración en WhatsApp',
+            'Personalización de tono y mensajes de marca',
+            'Optimización de respuestas',
+            'Mantenimiento y soporte por 1 mes'
+          ],
+          popular: true,
+          color: 'from-indigo-400 to-blue-500'
+        }
+      ]
+    },
+  
+    // =========================
+    // 🟢 PLANES AVANZADOS
+    // =========================
+    {
+      category: 'Planes Avanzados',
+      description: 'Soluciones estratégicas y sistemas completos para negocios en crecimiento.',
+      items: [
+        {
+          name: 'Crecimiento',
+          price: '1.2m',
+          features: [
+            'Logo profesional',
+            'Creación y optimización de redes sociales (1 mes)',
+            'Actualización visual de redes sociales (1 mes)',
+            'Reorganización visual de productos',
+            'Concepto de identidad de marca',
+            'Definición de propuesta de valor',
+            'Lineamientos visuales básicos'
+          ],
+          popular: false,
+          color: 'from-emerald-400 to-green-500'
+        },
+        {
+          name: 'Sistema Avanzado',
+          price: 'Desde $3.500.000 COP',
+          features: [
+            'Sistema web completo (NO landing page)',
+            'Backend + Frontend (Full Stack)',
+            'Base de datos profesional',
+            'Sistema de reservas o pedidos',
+            'Gestión de usuarios (login y roles)',
+            'Panel administrativo',
+            'Integración de pagos',
+            'Estados y validaciones (reservas, pagos, usuarios)',
+            'Notificaciones básicas (correo o WhatsApp)',
+            'Diseño UI/UX premium y responsive',
+            'Optimización de rendimiento y seguridad',
+            'Deploy profesional (Vercel / servidor)',
+            'Capacitación básica para el cliente',
+            'Mantenimiento y soporte por 4 meses'
+          ],
+          popular: false,
+          color: 'from-purple-500 to-indigo-600'
+        }
+      ]
     }
-    
   ];
+  
 
-  // LINKS ACTUALIZADOS AQUÍ
+  
   const examples = [
-    { title: 'Restaurante Gourmet', category: 'Gastronomía', description: 'Sitio elegante con menú digital y reservas.', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop', color: 'from-orange-500 to-red-500', link: 'https://demo-restaurante-five.vercel.app' },
-    { title: 'Boutique de Moda', category: 'E-commerce', description: 'Tienda online moderna con carrito.', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop', color: 'from-pink-500 to-purple-500', link: 'https://demo-boutique.vercel.app' },
-    { title: 'Estudio Arquitectura', category: 'Portafolio', description: 'Diseño minimalista visual.', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop', color: 'from-slate-500 to-gray-500', link: 'https://demo-arquitectura.vercel.app' },
-    { title: 'Gimnasio Fitness', category: 'Servicios', description: 'Horarios y sistema de inscripción.', image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop', color: 'from-green-500 to-emerald-500', link: 'https://demo-gimnasio.vercel.app' },
-    { title: 'Agencia de Viajes', category: 'Turismo', description: 'Paquetes turísticos y cotización.', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop', color: 'from-blue-500 to-cyan-500', link: 'https://demo-viajes.vercel.app' },
-    { title: 'Clínica Dental', category: 'Salud', description: 'Servicios médicos y agenda.', image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop', color: 'from-teal-500 to-blue-500', link: 'https://demo-clinica-pi.vercel.app' },
-    { title: 'Tienda iPhone', category: 'E-commerce', description: 'Venta de iPhones con catálogo, carrito y diseño premium.', image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=600&fit=crop', color: 'from-gray-500 to-neutral-800', link: 'https://tienda-tecnologia-eight.vercel.app' }
-
+    {
+      title: 'Restaurante Gourmet',
+      category: 'Gastronomía',
+      description: 'Sitio elegante con menú digital y reservas.',
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
+      color: 'from-orange-500 to-red-500',
+      link: 'https://demo-restaurante-five.vercel.app'
+    },
+    {
+      title: 'Boutique de Moda',
+      category: 'E-commerce',
+      description: 'Tienda online moderna con carrito.',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
+      color: 'from-pink-500 to-purple-500',
+      link: 'https://demo-boutique.vercel.app'
+    },
+    {
+      title: 'Estudio Arquitectura',
+      category: 'Portafolio',
+      description: 'Diseño minimalista visual.',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop',
+      color: 'from-slate-500 to-gray-500',
+      link: 'https://demo-arquitectura.vercel.app'
+    },
+    {
+      title: 'Gimnasio Fitness',
+      category: 'Servicios',
+      description: 'Horarios y sistema de inscripción.',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop',
+      color: 'from-green-500 to-emerald-500',
+      link: 'https://demo-gimnasio.vercel.app'
+    },
+    {
+      title: 'Agencia de Viajes',
+      category: 'Turismo',
+      description: 'Paquetes turísticos y cotización.',
+      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop',
+      color: 'from-blue-500 to-cyan-500',
+      link: 'https://demo-viajes.vercel.app'
+    },
+    {
+      title: 'Clínica Dental',
+      category: 'Salud',
+      description: 'Servicios médicos y agenda.',
+      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop',
+      color: 'from-teal-500 to-blue-500',
+      link: 'https://demo-clinica-pi.vercel.app'
+    },
+    {
+      title: 'Tienda iPhone',
+      category: 'E-commerce',
+      description: 'Venta de iPhones con catálogo, carrito y diseño premium.',
+      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=600&fit=crop',
+      color: 'from-gray-500 to-neutral-800',
+      link: 'https://tienda-tecnologia-eight.vercel.app'
+    },
+  
+    {
+      title: 'Hotel & Resort',
+      category: 'Hotelería',
+      description: 'Página moderna para hotel con reservas, habitaciones y galería.',
+      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop',
+      color: 'from-indigo-500 to-blue-600',
+      link: 'https://hotel-lumiere.vercel.app'
+    },
+    {
+      title: 'Barbería Premium',
+      category: 'Estética',
+      description: 'Sitio para barbería con reservas online y servicios.',
+      image: 'https://images.unsplash.com/photo-1599351431613-18ef1fdd27e1?w=800&h=600&fit=crop',
+      color: 'from-zinc-700 to-black',
+      link: 'https://barberia-elite-web.vercel.app'
+    },
+    {
+      title: 'Comida Rápida',
+      category: 'Restaurantes',
+      description: 'Menú digital, pedidos por WhatsApp y diseño llamativo.',
+      image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&h=600&fit=crop',
+      color: 'from-yellow-400 to-red-500',
+      link: 'https://comida-rapida-six.vercel.app'
+    }
   ];
+  
 
   return (
     <div className="bg-[#030712] text-white min-h-screen selection:bg-purple-500 selection:text-white overflow-x-hidden font-sans">
@@ -286,7 +497,13 @@ export default function NextGeoStudio() {
       {/* Portafolio - LINKS CONECTADOS AQUÍ */}
       <section id="ejemplos" className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Resultados Reales</h2>
+        <h2 className="text-4xl font-bold text-center">Demos Profesionales</h2>
+
+<p className="mt-4 mb-12 text-center text-sm text-gray-400 max-w-2xl mx-auto">
+  ⚠️ Estos proyectos son <span className="text-white font-medium">demos visuales</span>. 
+  Algunos botones y funcionalidades no están activos, ya que son muestras del trabajo que realizamos mediante demos.
+</p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {examples.map((ex, i) => (
               <a 
@@ -318,62 +535,83 @@ export default function NextGeoStudio() {
         </div>
       </section>
 
-      {/* Planes Pricing */}
       <section id="planes" className="py-24 relative px-4">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-5xl font-bold">Inversión Transparente</h2>
-             <p className="text-gray-400 mt-4">Sin costos ocultos. Elige el motor de tu crecimiento.</p>
-          </div>
+  <div className="max-w-7xl mx-auto relative z-10">
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {plans.map((plan, idx) => (
-              <div 
-                key={idx} 
-                className={`relative rounded-3xl p-1 ${plan.popular ? 'bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500' : 'bg-white/10'} hover:scale-[1.02] transition-transform duration-300`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
-                    <Star size={12} fill="white" /> Más Popular
-                  </div>
-                )}
-                
-                <div className="bg-[#0b0f19] h-full rounded-[22px] p-8 flex flex-col relative overflow-hidden">
-                  <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${plan.color} opacity-10 blur-3xl rounded-full -mr-32 -mt-32 pointer-events-none`} />
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold">Inversión Transparente</h2>
+      <p className="text-gray-400 mt-4">Elige el plan ideal para tu negocio</p>
+    </div>
 
-                  <h3 className="text-xl font-bold text-gray-300 mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-6">
-                    <span className="text-4xl font-bold text-white">$ {plan.price}</span>
-                    <span className="text-gray-500 text-sm">/único</span>
-                  </div>
+    {plans.map((group, groupIndex) => (
+      <div key={groupIndex} className="mb-24">
 
-                  <ul className="space-y-4 mb-8 flex-1">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
-                        <div className={`mt-1 min-w-[16px] h-4 rounded-full bg-gradient-to-r ${plan.color} flex items-center justify-center`}>
-                          <span className="text-[10px] text-white font-bold">✓</span>
-                        </div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button 
-                    onClick={openWhatsApp}
-                    className={`w-full py-3 rounded-xl font-bold transition-all ${
-                      plan.popular 
-                        ? 'bg-white text-black hover:bg-gray-200' 
-                        : 'bg-white/5 border border-white/10 hover:bg-white/10 text-white'
-                    }`}
-                  >
-                    Elegir Plan
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="text-center mb-12">
+          <h3 className="text-3xl font-bold mb-3">{group.category}</h3>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            {group.description}
+          </p>
         </div>
-      </section>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {group.items.map((plan, idx) => (
+            <div
+              key={idx}
+              className={`relative rounded-3xl p-1 ${
+                plan.popular
+                  ? 'bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500'
+                  : 'bg-white/10'
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                  <Star size={12} fill="white" /> Más Popular
+                </div>
+              )}
+
+              <div className="bg-[#0b0f19] h-full rounded-[22px] p-8 flex flex-col relative overflow-hidden">
+                <div
+                  className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${plan.color} opacity-10 blur-3xl rounded-full -mr-32 -mt-32`}
+                />
+
+                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+
+                <div className="flex items-baseline gap-1 mb-6">
+                  <span className="text-4xl font-bold">$ {plan.price}</span>
+                </div>
+
+                <ul className="space-y-4 mb-8 flex-1">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                      <span
+                        className={`mt-1 min-w-[16px] h-4 rounded-full bg-gradient-to-r ${plan.color} flex items-center justify-center text-[10px] text-white`}
+                      >
+                        ✓
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <button
+                  onClick={openWhatsApp}
+                  className={`w-full py-3 rounded-xl font-bold transition-all ${
+                    plan.popular
+                      ? 'bg-white text-black hover:bg-gray-200'
+                      : 'bg-white/5 border border-white/10 hover:bg-white/10'
+                  }`}
+                >
+                  Elegir Plan
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* FAQ Compacto */}
       <section id="faq" className="py-24 px-4 bg-white/5 border-t border-white/5">
