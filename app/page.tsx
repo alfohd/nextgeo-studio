@@ -54,7 +54,7 @@ export default function NextGeoStudio() {
           price: '250k',
           features: [
             'Landing page',
-            '2 secciones',
+            '2 seccciones',
             'No incluye dominio personalizado'
           ],
           popular: false,
