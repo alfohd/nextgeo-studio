@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "NextGeo Studio",
   description: "Soluciones digitales y desarrollo web",
   icons: {
-    icon: "/Logonextgeo.png",
+    icon: "/favicon-nextgeo.png",
   },
 };
 
